@@ -1,0 +1,32 @@
+/* Normalizado */
+
+*{
+     list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    }
+
+.navBar{
+    background-color: #3475a0;
+    font-size: 20px;
+    justify-content: space-between;
+    padding: 0 15px;
+    height: 10vh;
+    align-items: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+ul{
+    width: 50%;
+    justify-content: space-around;
+}
+a{
+    color:#2b2b2b;
+
+}
