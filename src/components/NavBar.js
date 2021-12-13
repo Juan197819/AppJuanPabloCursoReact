@@ -1,12 +1,13 @@
 import './Navbar.css'
 import CartWidget from './CartWidget'
 
-const NavBar = () => {
+const NavBar = ({valorCarrito}) => {
+    
     return (
         
         <nav className= 'flexRow navBar'>
             <picture className= 'logo'>
-                <img className= 'logo' src= "./imagenes/image2.png" alt= "Logo de la Tieda"/>   
+                <img className= 'logo' src= "./imagenes/image2.png" alt= "Logo de la Tienda"/>   
             </picture>
             <ul className= 'flexRow'>
                 <li>
@@ -19,7 +20,7 @@ const NavBar = () => {
                     <a href="/#">Contacto</a>
                 </li>
             </ul>
-            <CartWidget />
+            <CartWidget valorCarrito={valorCarrito} />
         </nav>
         
     )
