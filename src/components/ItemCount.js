@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Button = ({texto,func})=>{
+export const Button = ({texto,func})=>{
     return(
         <button onClick={func}>{texto}</button>
     )

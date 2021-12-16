@@ -59,8 +59,23 @@ a{
     border: 2px solid grey;
 
 }
+.cards{
+    width: 200px ;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px auto;
+    box-shadow: 5px 5px 5px rgb(128, 128, 128) ;
+    border: 2px solid grey;
+    background-color: whitesmoke;
+    font-size: 15px;
+}
+
+.cards h3, .cards p{
+    padding:  13px 10px;
+}
+
 button, p{
-    padding:  0px 5px;
+    padding:  5px 5px;
 
 }
 .div2 button{
@@ -83,3 +98,17 @@ button:hover{
     max-height: 70% ;
     padding-left: 10px;
 }
+.prod{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.itemList{
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+    align-items: center;
+    align-content: flex-start;
+    margin: 30px 50px;
+}
+
