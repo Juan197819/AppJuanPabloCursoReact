@@ -3,7 +3,7 @@ import {Button} from './ItemCount'
 
 const Item = (listado) => {
     return (
-        <div className='flexCol cards '>
+        <div className='flexCol cards'>
             <h3>{listado.nombre}</h3>
             <img className='prod' src={listado.foto} alt={listado.nombre}></img>
             <p>Precio ${listado.precio}</p>

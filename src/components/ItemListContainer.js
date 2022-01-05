@@ -1,7 +1,15 @@
 import ItemCount1 from './ItemCount'
 import ItemList from './ItemList'
-import promesaProd from './productos'
+import arrayProductos from './productos'
 import {useState, useEffect} from 'react'
+
+const promesaProd = ()=>{ 
+    return new Promise ((resolve, reject)=>{
+        setTimeout(()=> {
+            resolve (arrayProductos)
+        }, 2000)
+    })
+}
 
 const ItemListContainer = ({greeting})=> {
 

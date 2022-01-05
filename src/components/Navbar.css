@@ -76,11 +76,12 @@ a{
 
 button, p{
     padding:  5px 5px;
-
+    margin: 5px
 }
 .div2 button{
     font-size: 25px;
     text-align: center;
+
 }
 
 button:hover{
@@ -112,3 +113,19 @@ button:hover{
     margin: 30px 50px;
 }
 
+.cardsDetalle{
+    width: 80%;
+    font-size: 25px;
+    padding: 25px;
+}
+.cardsDetalle h3 {
+    font-size: 40px;
+}
+.cardsDetalle p {
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.cardsDetalle span{
+    color: rgb(0, 216, 90);
+    font-weight: bold;
+}

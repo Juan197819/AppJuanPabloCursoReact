@@ -85,12 +85,4 @@ const arrayProductos =[
     }
 ]
 
-const promesaProduct = ()=>{ 
-    return new Promise ((resolve, reject)=>{
-        setTimeout(()=> {
-            resolve (arrayProductos)
-        }, 2000)
-    })
-}
-
-export default promesaProduct
+export default arrayProductos
