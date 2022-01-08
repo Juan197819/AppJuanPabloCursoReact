@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    
 }
 
 .flexRow {
@@ -30,6 +31,7 @@
 }
 .body{
     margin-top:10vh;
+    
 }
 
 ul{
@@ -56,6 +58,7 @@ a{
 
 .centrado{
     text-align: center;
+    background-color: rgb(191, 214, 208);
 }
 
 .div1{
