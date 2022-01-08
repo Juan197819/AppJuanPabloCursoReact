@@ -16,6 +16,9 @@
 }
 
 .navBar{
+    top: 0;
+    position: fixed;
+    width: 100%;
     background-color: #3475a0;
     font-size: 20px;
     justify-content: space-between;
@@ -23,7 +26,10 @@
     height: 10vh;
     align-items: center;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-
+    margin-bottom: 10px;
+}
+.body{
+    margin-top:10vh;
 }
 
 ul{
@@ -46,6 +52,10 @@ a{
 .textCenter{
     margin: 10px;
     font-size: 25px;
+}
+
+.centrado{
+    text-align: center;
 }
 
 .div1{
@@ -71,21 +81,32 @@ a{
 }
 
 .cards h3, .cards p{
-    padding:  13px 10px;
+    padding:  5px 5px 0 0;
 }
 
-button, p{
+.boton, button{
+    padding: 5px 5px;
+    margin: 5px;
+    border: 1px solid;
+    color: black;
+}
+p{
     padding:  5px 5px;
-    margin: 5px
+    margin: 5px;
+
 }
 .div2 button{
-    font-size: 25px;
+    font-size: 15px;
     text-align: center;
+    
 
 }
 
-button:hover{
+button:hover, .boton:hover{
     background-color: rgba(0, 0, 0, 0.226);
+    border: 2px solid;
+    border-top: 2px solid grey;
+    border-left: 2px solid grey;
 }
 
 .div2{
@@ -128,4 +149,15 @@ button:hover{
 .cardsDetalle span{
     color: rgb(0, 216, 90);
     font-weight: bold;
+}
+header{
+    margin-bottom: 15vh;
+}
+.negrita{
+    font-weight: bold;
+}
+.cardsDetalle .p{
+    font-size: 18px;
+    font-family:sans-serif;
+    
 }

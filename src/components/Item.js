@@ -1,14 +1,21 @@
-import {Button} from './ItemCount'
-
+import { Link } from 'react-router-dom'
+import ItemCount1 from './ItemCount'
 
 const Item = (listado) => {
+
+    const onAdd = ()=>{
+        console.log('Se agrego al carrito')   
+    }
+
     return (
         <div className='flexCol cards'>
-            <h3>{listado.nombre}</h3>
-            <img className='prod' src={listado.foto} alt={listado.nombre}></img>
-            <p>Precio ${listado.precio}</p>
-            <Button texto={'Ver detalle de producto'} />
-            <p>Stock disponible: {listado.stock}</p>
+           { <h3>{listado.nombre}</h3>}
+            <img className='prod' src={`.${listado.foto}`} alt={listado.nombre}></img>
+            <p className='negrita'>Precio ${(listado.precio).toFixed(2)}</p>
+            <Link className='boton' to={`/item/${listado.id}`}>Ver detalle de producto</Link>
+            <ItemCount1 stock= {listado.stock} initial= {1} onAdd={onAdd}/>
+
+            <p className='negrita'>Stock disponible: {listado.stock}</p>
         </div>
     )
 }

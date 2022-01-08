@@ -1,18 +1,27 @@
-import './App.css'; 
-import './components/Navbar.css'
+import './Base de datos y estilos/main.css'
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer.js';
-import ItemDetailContainer from './components/ItemDetailContainer.js';
+import ItemListContainer from './contenedores/ItemListContainer.js';
+import ItemDetailContainer from './contenedores/ItemDetailContainer.js';
+import { BrowserRouter, Switch ,Route } from 'react-router-dom/cjs/react-router-dom.min';
 
 const App = ()=> {
+  
   return (
-    <div className="App">
-      <header className="App-header"> 
-        <NavBar valorCarrito={6}/>
-        <ItemListContainer greeting= 'TECNHOGAR SIEMPRE CON VOS'/>
-        <ItemDetailContainer />
-        
-      </header>
+    <div className="centrado">
+      <BrowserRouter>
+        <NavBar valorCarrito={5}/>
+        <Switch className='body'>
+            <Route exact path='/'>
+              <ItemListContainer greeting= 'TECNHOGAR SIEMPRE CON VOS'/>
+            </Route>
+            <Route exact path='/category/:categoryId'>
+              <ItemListContainer greeting= 'TECNHOGAR SIEMPRE CON VOS'/>
+            </Route>
+            <Route exact path='/item/:itemId'>
+              <ItemDetailContainer greeting= 'TECNHOGAR SIEMPRE CON VOS'/> 
+            </Route>
+          </Switch>
+      </BrowserRouter>
     </div>
   );
 }

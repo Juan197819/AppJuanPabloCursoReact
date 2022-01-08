@@ -1,10 +1,5 @@
 import { useState } from "react";
-
-export const Button = ({texto,func})=>{
-    return(
-        <button onClick={func}>{texto}</button>
-    )
-}
+import Button from './Button.js';
 
 const  ItemCount1 = ({stock, initial, onAdd})=> {
     
@@ -22,10 +17,10 @@ const  ItemCount1 = ({stock, initial, onAdd})=> {
     }
 
     return(
-        <div className='flexCol div1'>
-            <div className='flexRow div2'>
+        <div className='flexCol '>
+            <div className='flexRow'>
                 <Button texto='-' func={disminuir}/>
-                <p> Cantidad {number} </p>
+                <p > Cantidad {number} </p>
                 <Button texto='+' func={aumentar}/>
                 {/* <button onClick={()=>aumentar()}> + </button> Otra forma de hacerlo el mismo boton de aumentar*/}
             </div>
