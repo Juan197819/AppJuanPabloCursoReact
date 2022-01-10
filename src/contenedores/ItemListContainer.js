@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import {getItemByCategory, promesaProd} from '../Base de datos y estilos/productos'
 
 
-const ItemListContainer = ({greeting})=> {
+const ItemListContainer = ({greeting,onAdd})=> {
 
     const [productos, setProductos] = useState([])
     const {categoryId} = useParams()
@@ -30,7 +30,7 @@ const ItemListContainer = ({greeting})=> {
         <>
             <h1>{greeting}</h1>
             
-            <ItemList productos={productos} />
+            <ItemList productos={productos} onAdd={onAdd}/>
        </> 
     )
 }

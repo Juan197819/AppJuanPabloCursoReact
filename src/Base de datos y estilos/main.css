@@ -4,18 +4,30 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-    
+}
+.body{
+    margin-top:10vh;
 }
 
-.flexRow {
-    display: flex;
-    flex-direction: row;
-}
-.flexCol {
-    display: flex;
-    flex-direction: column;
-}
+/*         HEADER     */
 
+header{
+    margin-bottom: 15vh;
+}
+.logo{
+    height: 100%;
+}
+.icoCarrito{
+    background-color: #1b286e;
+    justify-content: space-around;
+    margin: 15px;
+    box-sizing: border-box;
+    align-items: center;
+}
+.logoCarrito{
+    max-height: 70% ;
+    padding-left: 10px;
+}
 .navBar{
     top: 0;
     position: fixed;
@@ -29,49 +41,56 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     margin-bottom: 10px;
 }
-.body{
-    margin-top:10vh;
-    
-}
 
-ul{
-    width: 50%;
-    justify-content: space-around;
+/*   ESTILOS PARTICULARES   */
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
 }
-a{
-    color:#2b2b2b;
+.flexCol {
+    display: flex;
+    flex-direction: column;
 }
-.logo{
-    height: 100%;
-}
-.icoCarrito{
-    background-color: #1b286e;
-    justify-content: space-around;
-    margin: 15px;
-    box-sizing: border-box;
-    align-items: center;
+.negrita{
+    font-weight: bold;
 }
 .textCenter{
     margin: 10px;
     font-size: 25px;
 }
-
 .centrado{
     text-align: center;
-    background-color: rgb(191, 214, 208);
+        background-color: rgb(191, 214, 208);
 }
 
-.div1{
-    height: 120px;
-    width: 200px ;
-    justify-content: space-around;
-    align-items: center;
-    margin: 30px auto;
-    background-color: rgba(255, 255, 240, 0.712);
-    box-shadow: 5px 5px 5px rgb(128, 128, 128) ;
-    border: 2px solid grey;
+/*      ESTILOS POR ETIQUETAS       */
 
+a{
+    color:#2b2b2b;
 }
+p{
+    padding:  5px 5px;
+    margin: 5px;
+}
+
+/*      BOTONES      */
+
+.boton, button{
+    padding: 5px 5px;
+    margin: 5px;
+    border: 1px solid;
+    color: black;
+}
+.boton:hover, button:hover {
+    background-color: rgba(128, 128, 128, 0.493);
+    border: 2px solid;
+    border-top: 2px solid grey;
+    border-left: 2px solid grey;
+}
+
+/*         CARDS      */
+
 .cards{
     width: 200px ;
     justify-content: space-around;
@@ -82,61 +101,9 @@ a{
     background-color: whitesmoke;
     font-size: 15px;
 }
-
 .cards h3, .cards p{
     padding:  5px 5px 0 0;
 }
-
-.boton, button{
-    padding: 5px 5px;
-    margin: 5px;
-    border: 1px solid;
-    color: black;
-}
-p{
-    padding:  5px 5px;
-    margin: 5px;
-
-}
-.div2 button{
-    font-size: 15px;
-    text-align: center;
-    
-
-}
-
-button:hover, .boton:hover{
-    background-color: rgba(0, 0, 0, 0.226);
-    border: 2px solid;
-    border-top: 2px solid grey;
-    border-left: 2px solid grey;
-}
-
-.div2{
-    border: 1px solid grey;
-    background-color: whitesmoke;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-}
-.logoCarrito{
-    max-height: 70% ;
-    padding-left: 10px;
-}
-.prod{
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0 20px;
-}
-.itemList{
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: space-around;
-    align-items: center;
-    align-content: flex-start;
-    margin: 30px 50px;
-}
-
 .cardsDetalle{
     width: 80%;
     font-size: 25px;
@@ -153,14 +120,39 @@ button:hover, .boton:hover{
     color: rgb(0, 216, 90);
     font-weight: bold;
 }
-header{
-    margin-bottom: 15vh;
-}
-.negrita{
-    font-weight: bold;
-}
 .cardsDetalle .p{
     font-size: 18px;
     font-family:sans-serif;
-    
+}
+.fotoProductos{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.itemList{
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+    align-items: center;
+    align-content: flex-start;
+    margin: 30px 50px;
+}
+
+/*     CARDS VER DETALLE     */
+
+.detail{
+    align-items: center;
+    padding-top:20px;
+}
+.anchoCount{
+    background-color: rgb(43, 43, 151);
+    color: white;
+    padding: 6px 30px;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+.anchoCount:hover{
+    background-color: rgb(84, 84, 204);
+    border: none;
+
 }

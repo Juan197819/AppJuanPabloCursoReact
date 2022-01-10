@@ -1,12 +1,14 @@
 import React from 'react'
 import Button from './Button.js'
 import {useState, useEffect} from 'react'
+import ItemCount1 from './ItemCount'
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({item,onAdd}) => {
 
     const [prec,setPrec]= useState()
     const [pulgadas,setPulgadas]= useState()
     const [memoria,setMemoria]= useState()
+    
 
     const precioPulgada = (e)=>{
         setPulgadas(e.target.value)
@@ -44,8 +46,9 @@ const ItemDetail = ({item}) => {
     }, [item])
 
     return (
+        
         <div className='flexRow cards cardsDetalle'>
-            <img className='prod' src={`.${item.foto}`} alt={item.nombre}></img>
+            <img className='fotoProductos' src={`.${item.foto}`} alt={item.nombre}></img>
             <div className='flexCol cardsDetalle'>
                 <h3>{item.nombre}</h3>
                 {item.categoria === 'Audio y Video' &&<h3>{pulgadas}</h3>}
@@ -63,18 +66,23 @@ const ItemDetail = ({item}) => {
                     <Button texto='Blanco' />
                 </div> 
                 
-                {item.categoria === 'Celulares y Tablets' &&<div>
-                <p>Memoria Interna: </p>
-                    <Button texto='32 GB' func={precioPulgada}/>
-                    <Button texto='64 GB' func={precioPulgada}/>
-                    <Button texto='128 GB' func={precioPulgada}/>
-                    </div>}
-                {item.categoria === 'Audio y Video' &&<div>
-                <p>Cantidad de pulgadas: </p>
+                {item.categoria === 'Celulares y Tablets' &&
+                <div>
+                    <p>Memoria Interna: </p>
+                        <Button texto='32 GB' func={precioPulgada}/>
+                        <Button texto='64 GB' func={precioPulgada}/>
+                        <Button texto='128 GB' func={precioPulgada}/>
+                </div>}
+                {item.categoria === 'Audio y Video' &&
+                <div>
+                    <p>Cantidad de pulgadas: </p>
                     <Button texto='32"' func={precioPulgada}/>
                     <Button texto='49"' func={precioPulgada}/>
                     <Button texto='55"' func={precioPulgada}/>
                 </div>}
+
+                <ItemCount1 style={{clase: 'detail', anchoCount:'anchoCount'}} stock= {item.stock} initial= {1} onAdd={onAdd}/>
+
             </div>
         </div>
     )

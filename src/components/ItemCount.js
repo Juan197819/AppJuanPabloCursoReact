@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from './Button.js';
 
-const  ItemCount1 = ({stock, initial, onAdd})=> {
+const  ItemCount1 = ({stock, initial, onAdd, style= {}})=> {
     
     const [number, setNumber] = useState(initial)
     
@@ -17,14 +17,14 @@ const  ItemCount1 = ({stock, initial, onAdd})=> {
     }
 
     return(
-        <div className='flexCol '>
-            <div className='flexRow'>
+        <div className= {`flexCol ${style.clase}`}>
+            <div className='flexRow '>
                 <Button texto='-' func={disminuir}/>
                 <p > Cantidad {number} </p>
                 <Button texto='+' func={aumentar}/>
                 {/* <button onClick={()=>aumentar()}> + </button> Otra forma de hacerlo el mismo boton de aumentar*/}
             </div>
-                <Button texto='Agregar al Carrito' func={onAdd}/>
+                <Button clase={style.anchoCount} texto='Agregar al Carrito' func={onAdd}/>
         </div>
     )
 }

@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 
 
-const ItemDetailContainer = ({greeting})=>{ 
+const ItemDetailContainer = ({greeting,onAdd})=>{ 
 
     const [item, setItem] = useState([]);
     const {itemId} = useParams();
@@ -23,7 +23,7 @@ const ItemDetailContainer = ({greeting})=>{
     return(
         <>
         <h1>{greeting}</h1>
-        <ItemDetail item= {item}/>
+        <ItemDetail onAdd={onAdd} item= {item}/>
         </>
     )
 }
