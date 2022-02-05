@@ -1,7 +1,7 @@
 import CartWidget from './CartWidget'
 import { Link } from 'react-router-dom'
 
-const NavBar = ({valorCarrito}) => {
+const NavBar = () => {
     
     return (
         <header>
@@ -16,7 +16,7 @@ const NavBar = ({valorCarrito}) => {
                     <Link to={'/category/Celulares y Tablets'}>Celulares y Tablets</Link>
                     <Link to={'/category/Notebooks'}>Notebooks</Link>
                     <Link to={'/category/Gamer'}>Gamer</Link>
-                <CartWidget valorCarrito={valorCarrito} />
+                <CartWidget/>
             </nav>
         </header>
         

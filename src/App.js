@@ -1,32 +1,42 @@
 import './Base de datos y estilos/main.css'
+import React from "react"
 import NavBar from './components/NavBar';
 import ItemListContainer from './contenedores/ItemListContainer.js';
 import ItemDetailContainer from './contenedores/ItemDetailContainer.js';
+import Cart from './components/Cart.js';
 import { BrowserRouter, Switch ,Route } from 'react-router-dom/cjs/react-router-dom.min';
+import {CartProvider} from './context/CartContext';
+import CartWidget from './components/CartWidget.js'
+
 
 const App = ()=> {
 
-  const onAdd = ()=>{
-    console.log('Se agrego al carrito')   
-  }
-
   return (
     <div className="centrado">
-      <BrowserRouter>
-        <NavBar valorCarrito={5}/>
-        <Switch className='body'>
-            <Route exact path='/'>
-              <ItemListContainer onAdd={onAdd} greeting= 'TECNHOGAR SIEMPRE CON VOS'/>
-            </Route>
-            <Route exact path='/category/:categoryId'>
-              <ItemListContainer onAdd={onAdd} greeting= 'TECNHOGAR SIEMPRE CON VOS'/>
-            </Route>
-            <Route exact path='/item/:itemId'>
-              <ItemDetailContainer onAdd={onAdd} greeting= 'TECNHOGAR SIEMPRE CON VOS'/> 
-            </Route>
-          </Switch>
-      </BrowserRouter>
-    </div>
+        <CartProvider>
+            <BrowserRouter>
+                <NavBar/>
+                <h1>TECNHOGAR SIEMPRE CON VOS</h1>
+                <Switch className='body'>
+                    <Route exact path='/'>
+                        <ItemListContainer/>
+                    </Route>
+                    <Route exact path='/category/:categoryId'>
+                        <ItemListContainer/>
+                    </Route>
+                    <Route exact path='/item/:itemId'>
+                        <ItemDetailContainer/> 
+                    </Route>
+                    <Route exact path='/cart'>
+                        <Cart /> 
+                    </Route>
+                    <Route exact path='/cart'>
+                        <CartWidget /> 
+                    </Route>
+                </Switch>
+            </BrowserRouter>
+        </CartProvider>
+        </div>
   );
 }
 

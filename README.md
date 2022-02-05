@@ -28,7 +28,7 @@ Tiene el detalle de los productos y permite ver distintos modelos del mismo.
 Es el que mapea el array de productos y retorna un array de cards.
 
 ###### Item.js
-Es el componente que retorna la card de praductos que es mapeada por el ItemList.js.
+Es el componente que retorna la card de productos que es mapeada por el ItemList.js.
 
 ###### ItemCount.js
 Es el componente para agregar o quitar unidades de un producto en cada card.

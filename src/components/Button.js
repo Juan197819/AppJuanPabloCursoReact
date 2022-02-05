@@ -1,7 +1,8 @@
-const Button = ({texto,func,clase={}})=>{
+const Button = ({children,value,texto,func,clase={}})=>{
+    
     return(
-        <button className={clase} value={texto} onClick={func}>{texto}</button>
+        <button className={clase} id={texto} value={value} onClick={func}>{texto}{children}</button>
     )
 }
 
-export default Button
+export default Button 

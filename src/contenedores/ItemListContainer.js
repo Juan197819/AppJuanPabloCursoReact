@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import {getItemByCategory, promesaProd} from '../Base de datos y estilos/productos'
 
 
-const ItemListContainer = ({greeting,onAdd})=> {
+const ItemListContainer = ()=> {
 
     const [productos, setProductos] = useState([])
     const {categoryId} = useParams()
@@ -19,19 +19,15 @@ const ItemListContainer = ({greeting,onAdd})=> {
             const list = promesaProd()
             list.then(list=>{
                 setProductos (list)
-        }) }
+            })
+        }
         return (() => {
             setProductos ([])
        })
    }, [categoryId])
 
-
     return(
-        <>
-            <h1>{greeting}</h1>
-            
-            <ItemList productos={productos} onAdd={onAdd}/>
-       </> 
+            <ItemList productos={productos} />
     )
 }
 
