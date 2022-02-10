@@ -1,25 +1,12 @@
 import { Link } from 'react-router-dom'
-import {useState, useEffect} from 'react'
 
 const Item = (listado) => {
-    const [prec, setPrec]= useState()
-    const [modeloArt, setModeloArt]= useState()
-    const [memoria, setMemoria]= useState()
-    
-    useEffect(() => {
-        setPrec((listado.precio)?.toFixed(2))
-        setModeloArt(` 49"`)
-        setMemoria(`32 GB`)
-        
-    }, [listado])
     return (
         <div className='flexCol cards'>
            <h3>{listado.nombre}</h3>
-            {(listado.nombre)?.includes('Tv') && <h3>{modeloArt}</h3>}
-            {listado.categoria === 'Celulares y Tablets' &&<h4>{memoria}</h4>}
-
+            {listado.categoria === 'Celulares y Tablets' &&<h4>32 GB</h4>}
             <img className='fotoProductos' src={`.${listado.foto}`} alt={listado.nombre}></img>
-            <p className='negrita'>Precio ${(prec)}</p>
+            <p className='negrita'>Precio ${(listado.precio.toFixed(2))}</p>
             {listado.stock!==0
             ?
             <>

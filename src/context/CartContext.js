@@ -1,4 +1,6 @@
 import React, {useState} from "react"
+import {updateDoc,doc} from "firebase/firestore"
+import {db} from "../services/firebase"
 
 const CartContext = React.createContext('') 
 
@@ -7,35 +9,37 @@ export const CartProvider= ({children})=>{
     const[cart, setCart] = useState([])
     const[cantCartWidget, setCantCartWidget] = useState(0)
 
-    const removeItem= (e)=>{
-        const idEliminado = (e.target.dataset.id || e.target.parentNode.dataset.id);
-        const prodEliminado = (cart.filter(product=>product.id!=idEliminado));
-        setCart([...prodEliminado]);
-        sumarCant();
-    }
-    const setSeleccion=(item)=>{
+    const addItem=(item)=>{
         const comp = isInCart(item);
         if (comp==false) {
-            setCart([...cart, item]);
-            sumarCant(item.cantidad)
+            let newCart=[...cart, item]
+            setCart(newCart);
+            sumarCant(newCart)
         }else{
-            sumarCant()
+            let newCart = (cart.filter(product=>product.id!=item.id));
+            setCart([item,...newCart]);
+            newCart =[item,...newCart]
+            sumarCant(newCart)
         }
-    }
-    const isInCart = (item)=>{
-        return cart.some(producto=> producto===item)
+        updateDoc(doc(db,'Productos',item.id), {
+            cantidad: item.cantidad, 
+            stock: item.stock})
     }
 
-    const sumarCant = (cantItemActual=0)=>{
+    const isInCart = (item)=>{
+        return cart.some(producto=> producto.id==item.id)
+    }
+
+    const sumarCant = (value)=>{
         let subtotal = 0
-        cart.forEach(element=> {
+        value.forEach(element=> {
         subtotal = subtotal + Number(element.cantidad)
         })
-        setCantCartWidget (cantItemActual+subtotal);
+        setCantCartWidget(subtotal)
     }
 
     return(
-        <CartContext.Provider value={{sumarCant,removeItem,setCart,cart,setSeleccion,setCantCartWidget,cantCartWidget}} >
+        <CartContext.Provider value={{setCart,cart,addItem,setCantCartWidget,cantCartWidget}} >
             {children}
         </CartContext.Provider>
     )

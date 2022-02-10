@@ -92,6 +92,10 @@ p{
     border-left: 2px solid grey;
 }
 
+.boton2Negro, .boton1Blanco{
+    background-color: rgba(128, 128, 128, 0.788);
+    
+}
 /*         CARDS      */
 
 .cards{
@@ -247,4 +251,12 @@ table{
     font-size: 25px;
     text-align:end;
     position: end;
+}
+.formulario{
+    justify-content: left;
+}
+input, label{
+margin:5px 50px;
+font-size: 20px;
+text-align: left;
 }
